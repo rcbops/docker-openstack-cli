@@ -9,6 +9,7 @@ RUN apk add --update \
   musl-dev \
   linux-headers \
   jq \
+  bash \
   && pip install --no-cache-dir pip setuptools \
   && pip install --no-cache-dir python-openstackclient==3.11.0 python-neutronclient==6.3.0 \
   && apk del gcc musl-dev linux-headers \
@@ -18,6 +19,8 @@ RUN apk add --update \
 # e.g. docker run -v ${PWD}:/data jmcvea/openstack-client
 VOLUME ["/data"]
 
+ENV PS1="\W $ "
+
 # Default is to start a shell. A more common behavior would be to override the command when starting.
 # e.g. docker run -ti jmcvea/openstack-client openstack server list
-CMD ["/bin/sh"]
+CMD ["/bin/bash"]
