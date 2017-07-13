@@ -56,10 +56,10 @@ docker run -it --rm \
 source openrc.sh
 
 # Get into a shell to run openstack commands
-alias oscsh='docker run -it --rm --volume ${PWD}:/data --env-file <(env | grep OS_) quay.io/rackspace/openstack-cli'
+alias osc='docker run -it --rm --volume ${PWD}:/data --env-file <(env | grep OS_) quay.io/rackspace/openstack-cli'
 
 # Make it look like you're running openstack locally
-alias openstack='oscsh openstack'
+alias openstack='osc openstack'
 ```
 
 ## Update the OpenStack CLI version
