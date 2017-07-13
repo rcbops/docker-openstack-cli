@@ -1,6 +1,6 @@
 # OpenStack CLI
 
-Use a Docker image for OpenStack client tooling!
+Use a Docker image for OpenStack client tooling! [![Docker Repository on Quay](https://quay.io/repository/rackspace/openstack-cli/status "Docker Repository on Quay")](https://quay.io/repository/rackspace/openstack-cli)
 
 ## Quick start
 
@@ -64,7 +64,14 @@ alias openstack='oscsh openstack'
 
 ## Update the OpenStack CLI version
 
-Submit a PR with an update to the version in the [Dockerfile](Dockerfile). The `latest` image at [quay.io/rackspace/openstack-cli](https://quay.io/rackspace/openstack-cli) will automatically be updated to that version.
+Submit a PR with an update to the version in the [Dockerfile](Dockerfile). Once the PR merges, the `master` tag image at [quay.io/rackspace/openstack-cli](https://quay.io/rackspace/openstack-cli) will automatically be updated to that version.
+
+Update the `latest` tag image with the following commands.
+
+```bash
+git tag --force latest
+git push --force upstream refs/tags/latest
+```
 
 ## Inspired by
 
