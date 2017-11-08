@@ -1,28 +1,31 @@
 FROM alpine:3.6
 
 RUN apk add --update \
-  python-dev \
+  bash \
+  ca-certificates \
+  curl \
+  gcc \
+  jq \
+  libffi-dev \
+  libressl-dev \
+  linux-headers \
+  musl-dev \
   py-pip \
   py-setuptools \
-  ca-certificates \
-  gcc \
-  musl-dev \
-  linux-headers \
-  jq \
-  bash \
+  python-dev \
   && pip install --no-cache-dir pip setuptools \
-  && pip install --no-cache-dir python-openstackclient==3.11.0 \
-  && pip install --no-cache-dir python-neutronclient==6.3.0  \
-  && pip install --no-cache-dir python-designateclient==2.6.0 \
-  && apk del gcc musl-dev linux-headers \
+  && pip install --no-cache-dir python-openstackclient==3.12.0 \
+  && pip install --no-cache-dir python-neutronclient==6.5.0  \
+  && pip install --no-cache-dir python-designateclient==2.7.0 \
+  && apk del gcc libffi-dev libressl-dev linux-headers musl-dev \
   && rm -rf /var/cache/apk/*
 
 # Add a volume so that a host filesystem can be mounted .
-# e.g. docker run -v ${PWD}:/data jmcvea/openstack-client
+# e.g. docker run -v ${PWD}:/data quay.io/rackspace/openstack-cli
 VOLUME ["/data"]
 
 ENV PS1="\W $ "
 
 # Default is to start a shell. A more common behavior would be to override the command when starting.
-# e.g. docker run -ti jmcvea/openstack-client openstack server list
+# e.g. docker run --rm -it quay.io/rackspace/openstack-cli openstack server list
 CMD ["/bin/bash"]
