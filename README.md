@@ -19,6 +19,14 @@ docker run -it --rm --volume ${PWD}:/data --env-file <(env | grep OS_) quay.io/r
 
 ## Tips
 
+### Openstack Clusters with Self-Signed CA certs
+
+If your cluster is using a self signed certificate for the API endpoints, you can provide that when you run the container:
+
+* `mkdir certs` in the root of this repo
+* `cp path/to/my/ca.crt certs/ca.crt`
+* `docker run -it --rm --volume ${PWD}:/data -e OS_CACERT=/data/certs/ca.crt --env-file <(env | grep OS_) quay.io/rackspace/openstack-cli`
+
 ### Accessing a host directory
 
 The `/data` directory is exposed as a volume that can be mounted.  This is convenient for OpenStack
