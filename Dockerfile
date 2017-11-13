@@ -17,6 +17,7 @@ RUN apk add --update \
   && pip install --no-cache-dir python-openstackclient==3.12.0 \
   && pip install --no-cache-dir python-neutronclient==6.5.0  \
   && pip install --no-cache-dir python-designateclient==2.7.0 \
+  && pip install --no-cache-dir swiftly==2.06 \
   && apk del gcc libffi-dev libressl-dev linux-headers musl-dev \
   && rm -rf /var/cache/apk/*
 
