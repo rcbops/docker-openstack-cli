@@ -79,7 +79,7 @@ To also update the `latest` tag do the following:
 1. Go to the [tags page](https://quay.io/repository/rackspace/openstack-cli?tab=tags).
 1. Click the gear icon for the `master` tag.
 1. Choose Add New Tag.
-1. Enter `latest` and click Create Tag.
+1. Enter `latest` and click Move Tag.
 
 ## Inspired by
 
