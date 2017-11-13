@@ -9,7 +9,7 @@ Download the [openrc.sh file](https://docs.openstack.org/user-guide/common/cli-s
 ```bash
 source openrc.sh
 
-# ${PWD} is mounted to allow for actions requiring host filesystem access.  
+# ${PWD} is mounted to allow for actions requiring host filesystem access.
 # See 'Tips' section below
 docker run -it --rm --volume ${PWD}:/data --env-file <(env | grep OS_) quay.io/rackspace/openstack-cli
 / # openstack --version
@@ -72,7 +72,14 @@ alias openstack='osc openstack'
 
 ## Update the OpenStack CLI version
 
-Submit a PR with an update to the version in the [Dockerfile](Dockerfile). Once the PR merges, the `master` and `latest` tag images at [quay.io/rackspace/openstack-cli](https://quay.io/rackspace/openstack-cli) will automatically be updated to that version.
+Submit a PR with an update to the version in the [Dockerfile](Dockerfile). Once the PR merges, the `master` tag images at [quay.io/rackspace/openstack-cli](https://quay.io/rackspace/openstack-cli) will automatically be updated to that version.
+
+To also update the `latest` tag do the following:
+
+1. Go to the [tags page](https://quay.io/repository/rackspace/openstack-cli?tab=tags).
+1. Click the gear icon for the `master` tag.
+1. Choose Add New Tag.
+1. Enter `latest` and click Create Tag.
 
 ## Inspired by
 
