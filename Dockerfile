@@ -18,6 +18,7 @@ RUN apk add --update \
   && pip install --no-cache-dir python-neutronclient==6.5.0  \
   && pip install --no-cache-dir python-designateclient==2.7.0 \
   && pip install --no-cache-dir swiftly==2.06 \
+  && pip install --no-cache-dir python-octaviaclient==1.1.0 \
   && apk del gcc libffi-dev libressl-dev linux-headers musl-dev \
   && rm -rf /var/cache/apk/*
 
