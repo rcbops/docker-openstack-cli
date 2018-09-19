@@ -18,6 +18,7 @@ RUN apk add --no-cache \
   && pip install --no-cache-dir python-heatclient==1.16.0 \
   && pip install --no-cache-dir python-neutronclient==6.5.0  \
   && pip install --no-cache-dir python-octaviaclient==1.1.0 \
+  && pip install --no-cache-dir python-swiftclient==3.6.0 \
   && pip install --no-cache-dir python-openstackclient==3.12.0 \
   && pip install --no-cache-dir swiftly==2.06 \
   && apk del gcc libffi-dev libressl-dev linux-headers musl-dev
